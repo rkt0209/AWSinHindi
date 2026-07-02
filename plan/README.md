@@ -28,6 +28,12 @@ Ye plan tumhe **10 din me** sab kuch sikha dega — bilkul zero se.
 | 4️⃣ | [`04-final-flow-real-life-example.md`](./04-final-flow-real-life-example.md) | Sabko jod ke ek poora real-life flow (sabse mazedaar) |
 | 5️⃣ | [`05-resources-aur-tips.md`](./05-resources-aur-tips.md) | Free resources, tools, aur Day-1 ke tips |
 
+### 📂 Din-Wise Detailed Folders (har din ka poora hands-on)
+
+| Din | Folder | Kya Milega |
+|-----|--------|-----------|
+| Din 1 | [`din-01-aws-iam-neenv/`](./din-01-aws-iam-neenv/README.md) | AWS account + Console + Region + MFA + IAM user + Billing — step-by-step, screen output, all cases, doc links |
+
 ---
 
 ## 🧭 Isko Kaise Use Karein?
