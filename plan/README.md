@@ -33,6 +33,7 @@ Ye plan tumhe **10 din me** sab kuch sikha dega — bilkul zero se.
 | Din | Folder | Kya Milega |
 |-----|--------|-----------|
 | Din 1 | [`din-01-aws-iam-neenv/`](./din-01-aws-iam-neenv/README.md) | AWS account + Console + Region + MFA + IAM user + Billing — step-by-step, screen output, all cases, doc links |
+| Din 2 | [`din-02-s3-godown/`](./din-02-s3-godown/README.md) | S3 concept + bucket banana + upload/download/delete + folders + security (public/private) + storage class/versioning |
 
 ---
 
