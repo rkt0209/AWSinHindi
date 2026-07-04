@@ -34,6 +34,7 @@ Ye plan tumhe **10 din me** sab kuch sikha dega — bilkul zero se.
 |-----|--------|-----------|
 | Din 1 | [`din-01-aws-iam-neenv/`](./din-01-aws-iam-neenv/README.md) | AWS account + Console + Region + MFA + IAM user + Billing — step-by-step, screen output, all cases, doc links |
 | Din 2 | [`din-02-s3-godown/`](./din-02-s3-godown/README.md) | S3 concept + bucket banana + upload/download/delete + folders + security (public/private) + storage class/versioning |
+| Din 3 | [`din-03-lambda-automatic-naukar/`](./din-03-lambda-automatic-naukar/README.md) | Lambda concept (har nayi term ka definition box) + function banana + test/logs + S3 trigger (file aate hi khud chale) + role/timeout/env |
 
 ---
 
