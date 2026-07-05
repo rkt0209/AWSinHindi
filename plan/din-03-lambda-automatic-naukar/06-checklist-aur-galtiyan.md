@@ -73,6 +73,7 @@
 |---------|----------|
 | **"Create function" pe Access Denied** | IAM user ko `AWSLambda_FullAccess` (admin se) lagwao. |
 | **`iam:CreateRole` is not authorized** | Lambda ka role banane ki permission nahi. Root/admin se user pe `IAMFullAccess` + `AWSLambda_FullAccess` attach karo (File 2 ka "🔑 Permission Check" box). |
+| **Log group delete pe Access Denied (`logs:DeleteLogGroup`)** | User ke paas CloudWatch permission nahi. Root/admin se `CloudWatchLogsFullAccess` attach karo. |
 | **Code badla par asar nahi** | **Deploy** dabana bhool gaye. Deploy karo. |
 | **Test pe `KeyError: 'Records'`** | Test button ki nakli parchi me `Records` nahi — asli test **file upload** se karo. |
 | **`Task timed out after 3.00 sec`** | Timeout badhao (Configuration → General configuration). |
@@ -94,6 +95,7 @@
 | **`AWSLambda_FullAccess`** | Lambda function banana/chalana | "Create function" pe Access Denied |
 | **`IAMFullAccess`** | Lambda ka role (wardi) banana | `iam:CreateRole is not authorized` |
 | **`AmazonS3FullAccess`** (Din 1 me mil chuki) | S3 trigger + file upload | S3 pe Access Denied |
+| **`CloudWatchLogsFullAccess`** | Logs dekhna + cleanup me log group delete | `logs:DeleteLogGroup` / logs pe Access Denied |
 
 > 💡 Aage jab Lambda ko S3 ka **content padhna** ho (Din 4), tab Lambda ke **role** me `AmazonS3ReadOnlyAccess` bhi jodenge (File 5).
 
@@ -128,6 +130,8 @@
 ### 3️⃣ CloudWatch Log Group Delete Karo (Chhupa Hua Kharcha!)
 > Logs (diary) delete na karo to storage ka thoda-thoda charge chalta rehta hai.
 - Search me `CloudWatch` → **Log groups** → `/aws/lambda/mera-pehla-lambda` select → **Actions** → **Delete log group(s)**.
+
+> 🔑 **Permission chahiye:** delete pe `AccessDenied` (`logs:DeleteLogGroup`) aaye to matlab user ke paas CloudWatch permission nahi. Root/admin se `rohit-iam-dev` par **`CloudWatchLogsFullAccess`** policy attach karo (IAM → Users → user → Add permissions → Attach policies directly), phir delete karo.
 
 ### 4️⃣ (Optional) IAM Role Delete Karo
 > Role (wardi) ka **koi charge nahi**, par safai ke liye:
