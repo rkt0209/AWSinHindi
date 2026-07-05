@@ -68,6 +68,7 @@
 | Problem | Solution |
 |---------|----------|
 | **"Create function" pe Access Denied** | IAM user ko `AWSLambda_FullAccess` (admin se) lagwao. |
+| **`iam:CreateRole` is not authorized** | Lambda ka role banane ki permission nahi. Root/admin se user pe `IAMFullAccess` + `AWSLambda_FullAccess` attach karo (File 2 ka "🔑 Permission Check" box). |
 | **Code badla par asar nahi** | **Deploy** dabana bhool gaye. Deploy karo. |
 | **Test pe `KeyError: 'Records'`** | Test button ki nakli parchi me `Records` nahi — asli test **file upload** se karo. |
 | **`Task timed out after 3.00 sec`** | Timeout badhao (Configuration → General configuration). |
@@ -77,6 +78,20 @@
 | **Galat Region me function** | Delete karke Mumbai me dobara, ya usi region me kaam. |
 | **Do-do baar chal gaya** | File baar-baar upload/replace hui — har create pe chalta hai. Normal. |
 | **Infinite loop dar** | Sirf tab jab output usi bucket/prefix me daalo. Hum nahi daal rahe — safe. |
+
+---
+
+## 🔑 Din 3 Me Kaunsi Permission Chahiye (One-Stop)
+
+> Din 1 wale IAM user ke paas sirf **S3** permission thi. Din 3 (Lambda) ke liye ye chahiye — root/admin se user pe attach karo (IAM → Users → `rohit-iam-dev` → Add permissions → Attach policies directly):
+
+| Policy | Kis Kaam Ke Liye | Kis Error Se Pata Chalta Hai |
+|--------|------------------|------------------------------|
+| **`AWSLambda_FullAccess`** | Lambda function banana/chalana | "Create function" pe Access Denied |
+| **`IAMFullAccess`** | Lambda ka role (wardi) banana | `iam:CreateRole is not authorized` |
+| **`AmazonS3FullAccess`** (Din 1 me mil chuki) | S3 trigger + file upload | S3 pe Access Denied |
+
+> 💡 Aage jab Lambda ko S3 ka **content padhna** ho (Din 4), tab Lambda ke **role** me `AmazonS3ReadOnlyAccess` bhi jodenge (File 5).
 
 ---
 

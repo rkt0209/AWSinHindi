@@ -17,6 +17,70 @@
 
 ---
 
+## 🔑 SABSE PEHLE — Permission Check (Warna Ye Error Aayega)
+
+> ⚠️ **Ye box zaroor padho — bahut log yahi atakte hain.**
+> Lambda banate waqt AWS ek **naya role (wardi)** bhi banata hai (File 1 me role = machine ki wardi wala box yaad karo). Agar tumhare Din 1 wale IAM user ke paas **role banane ki permission nahi**, to ye error aata hai:
+>
+> ```
+> User: arn:aws:iam::842756176543:user/rohit-iam-dev is not authorized to
+> perform: iam:CreateRole ... because no identity-based policy allows the
+> iam:CreateRole action
+> ```
+>
+> **Matlab (aasaan):** "Tumhe Lambda banane ki permission to hai, par uski **wardi (role) banane** ki nahi." Din 1 me humne user ko sirf **S3** wali permission di thi — Lambda/role wali nahi.
+
+### 📦 Ye Kya Hai: `iam:CreateRole`
+
+**Definition:** `iam:CreateRole` ek **permission ka naam** hai jiska matlab — "ye user nayi **role (wardi)** bana sakta hai." Lambda ko chalane ke liye ek role chahiye, aur console tumhare liye wo role **banane ki koshish** karta hai — par banane ke liye ye permission user ke paas honi chahiye.
+
+**Example:** Naya employee (Lambda) join kar raha hai, use ID-card (role) chahiye. Par ID-card **banane** ka haq sirf HR ke paas hai. Tum (user) HR nahi ho, isliye "ID-card nahi bana sakte" — yahi error hai.
+
+### 🛠️ Isko Theek Kaise Karein (Permission Do)
+
+Permission dena bada kaam hai, isliye ye **root user** (ya kisi admin) se hoga:
+
+1. **Root user** se AWS Console me login karo (Din 1 wala main email/password wala).
+2. Upar search me **`IAM`** → **IAM** → left me **"Users"** → apne user **`rohit-iam-dev`** pe click.
+3. **"Add permissions"** (ya "Permissions" tab → "Add permissions") → **"Attach policies directly"** chuno.
+4. Search karke ye **do policy** tick karo:
+   - **`AWSLambda_FullAccess`** → Lambda banane/chalane ke liye
+   - **`IAMFullAccess`** → role (wardi) banane ke liye ← **ye error isi ke bina aaya tha**
+5. **"Next" → "Add permissions"** dabao.
+6. Ab **wapas `rohit-iam-dev`** se login karke Lambda banao — ab chalega. ✅
+
+> ⚠️ **Chhoti si safety baat:** `IAMFullAccess` kaafi **powerful** hai (poore IAM pe control). **Seekhne** ke liye theek hai. Asli company me itni badi permission nahi dete — wahan sirf utni hi denge jitni chahiye (neeche "safe tareeka" dekho).
+
+<details>
+<summary>🔒 (Optional) Safe/Targeted Tareeka — sirf utni permission jitni chahiye</summary>
+
+`IAMFullAccess` ki jagah ek **custom policy** bana ke sirf role-banane wali permission do. IAM → Policies → Create policy → JSON → ye daalo (account number apna):
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "LambdaKeLiyeRoleBanane",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateRole",
+        "iam:AttachRolePolicy",
+        "iam:PutRolePolicy",
+        "iam:PassRole",
+        "iam:GetRole"
+      ],
+      "Resource": "arn:aws:iam::842756176543:role/service-role/*"
+    }
+  ]
+}
+```
+
+Isko `AWSLambda_FullAccess` ke saath user pe attach karo. Ye sirf Lambda ke role (`service-role/`) tak simit hai — zyada safe.
+</details>
+
+---
+
 ## 🪜 Step 1 — Create Function Dabao
 
 - **"Create function"** button dabao.
