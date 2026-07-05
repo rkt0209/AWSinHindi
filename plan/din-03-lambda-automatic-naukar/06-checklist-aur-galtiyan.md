@@ -30,6 +30,10 @@
 - [ ] Execution role kaha hai — pata
 - [ ] Timeout/Memory/Env variables ka idea
 
+**Cleanup (bill se bacho):**
+- [ ] S3 trigger + Lambda function + CloudWatch log group delete kiya
+- [ ] Bucket/`raw-data/sales.csv`/IAM user NAHI delete kiya (aage kaam aayega)
+
 ---
 
 ## 🧠 Din 3 Ki 5 Sabse Badi Seekh (Zubaani Yaad Rakho)
@@ -107,6 +111,40 @@
 - Configuration (memory/timeout) → https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html
 - Environment variables → https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html
 - Python me Lambda → https://docs.aws.amazon.com/lambda/latest/dg/lambda-python.html
+
+---
+
+## 🧹 Din Ke End Me Cleanup (Bill Se Bacho)
+
+> ⚠️ **Zaroori aadat:** Cloud me jo bhi banaya, use ke baad **delete** kar do. Free Tier me abhi kharcha **na ke barabar** hai, par (a) aadat achhi banti hai, aur (b) kuch cheezein chhup ke thoda-thoda charge karti rehti hain (jaise CloudWatch logs, S3 versions). Isliye aaj ka kaam ho jaye to ye **order me** delete karo:
+
+### 1️⃣ Sabse Pehle — S3 Trigger Hatao
+> Warna jab bhi bucket me file aayegi, Lambda chalta rahega (bekaar).
+- Lambda → apna function → **Configuration** tab → **Triggers** → S3 trigger select → **Delete**.
+
+### 2️⃣ Lambda Function Delete Karo
+- Lambda console → **Functions** → `mera-pehla-lambda` select → **Actions** → **Delete** → confirm me `delete` likho → Delete.
+
+### 3️⃣ CloudWatch Log Group Delete Karo (Chhupa Hua Kharcha!)
+> Logs (diary) delete na karo to storage ka thoda-thoda charge chalta rehta hai.
+- Search me `CloudWatch` → **Log groups** → `/aws/lambda/mera-pehla-lambda` select → **Actions** → **Delete log group(s)**.
+
+### 4️⃣ (Optional) IAM Role Delete Karo
+> Role (wardi) ka **koi charge nahi**, par safai ke liye:
+- Search me `IAM` → **Roles** → `mera-pehla-lambda-role-xxxx` dhoondho → select → **Delete**.
+
+### 5️⃣ S3 Ke Extra Test Files/Versions
+- Jo test files (`test2.csv` etc.) practice me daali, unhe delete karo. Versioning ON kiya tha to purane **versions** bhi delete karo (warna jagah/charge count hoti hai).
+
+---
+
+### ✋ Ye MAT Delete Karo (Aage Kaam Aayega)
+- **Apna S3 bucket** aur usme `raw-data/sales.csv` — **Din 4 (Glue)** me isi ka use hoga.
+- **IAM user `rohit-iam-dev`** aur uski permissions — ye roz login ke liye chahiye.
+
+> 💡 **Ek line:** "Jo aaj sirf practice ke liye banaya (Lambda, trigger, logs) — wo delete. Jo aage kaam aayega (bucket, data, user) — wo rakho."
+
+> 🧾 **Confirm:** Delete karne ke 1-2 din baad **Billing → Free Tier** aur **Cost Explorer** (Din 1 wala) me check kar lena ki koi unexpected charge to nahi.
 
 ---
 
