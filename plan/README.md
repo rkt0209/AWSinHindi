@@ -36,6 +36,7 @@ Ye plan tumhe **10 din me** sab kuch sikha dega — bilkul zero se.
 | Din 2 | [`din-02-s3-godown/`](./din-02-s3-godown/README.md) | S3 concept + bucket banana + upload/download/delete + folders + security (public/private) + storage class/versioning |
 | Din 3 | [`din-03-lambda-automatic-naukar/`](./din-03-lambda-automatic-naukar/README.md) | Lambda concept (har nayi term ka definition box) + function banana + test/logs + S3 trigger (file aate hi khud chale) + role/timeout/env |
 | Din 4 | [`din-04-glue-data-safai/`](./din-04-glue-data-safai/README.md) | Glue concept (ETL/Crawler/Catalog/DPU definition box) + 2-layer permission + crawler+catalog + visual ETL job (raw→clean) + run/verify + cleanup |
+| Din 5 | [`din-05-genai-spec-steering/`](./din-05-genai-spec-steering/README.md) | GenAI/Agentic dev concept (Spec/Steering definition box) + steering file (rules) + spec file (req/design/tasks) + AI se code likhwana + bina-vs-saath farak + cleanup (koi AWS bill nahi) |
 
 ---
 

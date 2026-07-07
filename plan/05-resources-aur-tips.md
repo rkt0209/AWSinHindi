@@ -27,7 +27,7 @@
 |------|----------|----------|
 | **AWS Account (Free Tier)** | Sab practice ke liye | ✅ Must |
 | **Web Browser (Chrome)** | AWS Console chalane ko | ✅ Must |
-| **Postman** | APIs test karne ko (Din 7) | ✅ Recommended |
+| **Postman** | APIs test karne ko (Din 8) | ✅ Recommended |
 | **VS Code** | Code likhne ko | ✅ Recommended |
 | **Python ya Node.js** | Lambda code ke liye | 🟡 Ek aana chahiye |
 | **AWS CLI** | Terminal se AWS chalana (advance) | 🟡 Optional |

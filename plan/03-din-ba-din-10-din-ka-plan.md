@@ -101,7 +101,33 @@
 
 ---
 
-## 📅 DIN 5 — EMR + Big Data Basics 🏭
+## 📅 DIN 5 — Spec & Steering Files (AI / Agentic Dev) 🤖
+
+**Theme:** "AI ko sahi se guide karke code likhwana."
+
+> 💡 **Ye din yaha kyun?** Spec/Steering **AWS data-stack pe depend nahi karta** — ye AI se kaam karwane ka tareeka hai. Isliye Glue ke baad, EMR jaisi bhaari cheez se pehle, ek **halka aur fresh** din rakha hai. (Aur job me AI/agentic dev bahut kaam aata hai.)
+
+**Kya samajhna hai:**
+- **Spec file** = AI ko batao **kya banana hai** (Requirements → Design → Tasks).
+- **Steering file** = AI ko **permanent rules + context** do (coding style, libraries, naming).
+- Agentic development matlab kya — AI khud plan banake step-by-step code likhe.
+- (Optional) AWS ka **Kiro** tool dekho — ye isi pe based hai.
+
+**Hands-on:**
+1. Ek chhote project ka **spec** likho: "Ek to-do list app banao" — requirements, design, tasks alag-alag.
+2. Ek **steering file** likho: "Hamesha Python use karo, function ke naam chhote rakho, comments Hindi me."
+3. Kisi AI tool (jaise Claude/Kiro) se in files ke saath code likhwao — aur **bina** files ke bhi. **Farak dekho.**
+
+**✅ Ho Gaya Check:** Tum samajh gaye ki spec/steering se AI zyada accurate aur consistent code deta hai.
+
+**📚 Aaj ke padhne ke links:**
+- Kiro (AWS ka agentic IDE) → https://kiro.dev/
+- Spec files samajho → https://kiro.dev/docs/specs/
+- Steering files samajho → https://kiro.dev/docs/steering/
+
+---
+
+## 📅 DIN 6 — EMR + Big Data Basics 🏭
 
 **Theme:** "Bahut bada data — mazdooro ki team se."
 
@@ -125,7 +151,7 @@
 
 ---
 
-## 📅 DIN 6 — Step Functions: Manager 🔀
+## 📅 DIN 7 — Step Functions: Manager 🔀
 
 **Theme:** "Sab kaamo ko sahi order me chalana."
 
@@ -150,7 +176,7 @@
 
 ---
 
-## 📅 DIN 7 — APIs through Step Functions 🌐
+## 📅 DIN 8 — APIs through Step Functions 🌐
 
 **Theme:** "Bahar se request lekar pura flow chalana."
 
@@ -161,7 +187,7 @@
 
 **Hands-on:**
 1. **API Gateway** me ek simple API banao.
-2. Use Din 6 wale **Step Function se connect** karo.
+2. Use Din 7 wale **Step Function se connect** karo.
 3. Browser/Postman se request bhejo → dekho Step Function chala → response wapas aaya.
 4. (Bonus) Postman tool seekh lo — APIs test karne ka standard tool hai.
 
@@ -172,30 +198,6 @@
 - API Gateway Getting Started → https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started.html
 - API Gateway + Step Functions jodna → https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-with-stepfunctions.html
 - Postman tool → https://www.postman.com/
-
----
-
-## 📅 DIN 8 — Spec & Steering Files (AI / Agentic Dev) 🤖
-
-**Theme:** "AI ko sahi se guide karke code likhwana."
-
-**Kya samajhna hai:**
-- **Spec file** = AI ko batao **kya banana hai** (Requirements → Design → Tasks).
-- **Steering file** = AI ko **permanent rules + context** do (coding style, libraries, naming).
-- Agentic development matlab kya — AI khud plan banake step-by-step code likhe.
-- (Optional) AWS ka **Kiro** tool dekho — ye isi pe based hai.
-
-**Hands-on:**
-1. Ek chhote project ka **spec** likho: "Ek to-do list app banao" — requirements, design, tasks alag-alag.
-2. Ek **steering file** likho: "Hamesha Python use karo, function ke naam chhote rakho, comments Hindi me."
-3. Kisi AI tool (jaise Claude/Kiro) se in files ke saath code likhwao — aur **bina** files ke bhi. **Farak dekho.**
-
-**✅ Ho Gaya Check:** Tum samajh gaye ki spec/steering se AI zyada accurate aur consistent code deta hai.
-
-**📚 Aaj ke padhne ke links:**
-- Kiro (AWS ka agentic IDE) → https://kiro.dev/
-- Spec files samajho → https://kiro.dev/docs/specs/
-- Steering files samajho → https://kiro.dev/docs/steering/
 
 ---
 
@@ -247,10 +249,10 @@
 | 2 | Storage | S3 (godown) |
 | 3 | Chhota kaam | Lambda (vending machine) |
 | 4 | Data safai | Glue (ETL) |
-| 5 | Bada data | EMR (mazdooro ki team) |
-| 6 | Manager | Step Functions (flowchart) |
-| 7 | Bahar ki request | APIs + API Gateway |
-| 8 | AI guide | Spec & Steering files |
+| 5 | AI guide | Spec & Steering files (agentic dev) |
+| 6 | Bada data | EMR (mazdooro ki team) |
+| 7 | Manager | Step Functions (flowchart) |
+| 8 | Bahar ki request | APIs + API Gateway |
 | 9 | Sab jodo | Mini Project |
 | 10 | Dohraav | Revision + Day-1 prep |
 

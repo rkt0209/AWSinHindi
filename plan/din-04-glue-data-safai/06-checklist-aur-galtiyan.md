@@ -112,7 +112,7 @@
 - `clean-data/` me jo `part-0000...` files bani, unhe delete kar do (bill/jagah).
 
 ### ✋ Ye MAT Delete Karo (Aage Kaam Aayega)
-- **Bucket** aur **`raw-data/sales.csv`** — Din 5/6 me kaam aa sakta hai.
+- **Bucket** aur **`raw-data/sales.csv`** — Din 6 (EMR) me bada-data practice me kaam aa sakta hai.
 - **IAM user `rohit-iam-dev`** aur uski permissions — roz chahiye.
 - **`glue-mera-role`** — chaho to rakho (koi charge nahi), aage Glue phir use karo to kaam aayega. Nahi chahiye to IAM → Roles se delete.
 
@@ -142,6 +142,6 @@ Agar upar sab ✅ hai, to **shabaash!** 💪 Ab tumhare paas:
 Dimaag me picture:
 > "Crawler ne data ka schema samjha → ETL job ne raw-data uthaya, saaf kiya, clean-data me daala."
 
-**Kal:** Din 5 — **EMR (500 mazdoor — bahut bada data)** 🏗️. Jab data itna bada ho ki ek machine kam pade, tab kya karte hain — wo seekhenge.
+**Kal:** Din 5 — **GenAI: Spec & Steering Files (AI se code likhwana)** 🤖. AWS se thoda break — ek halka, mazedaar din jaha AI ko sahi se guide karke kaam karwana seekhoge. (EMR/bada data ab Din 6 pe shift ho gaya.)
 
 > Cleanup kar liya? ✅ Ab aaram karo, kal milte hain! 😴➡️🚀

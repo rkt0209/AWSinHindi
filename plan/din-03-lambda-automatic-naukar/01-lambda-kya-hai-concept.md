@@ -76,9 +76,9 @@ def lambda_handler(event, context):   # <-- YE hai handler (main darwaza)
 
 **Lambda ke common triggers:**
 - **S3** — "file aayi/upload hui" → Lambda chala do (aaj yahi karenge!)
-- **API Gateway** — "internet se request aayi" → Lambda chala do (Din 7 me)
+- **API Gateway** — "internet se request aayi" → Lambda chala do (Din 8 me)
 - **Schedule** — "har roz subah 9 baje" → Lambda chala do
-- **Step Functions** — "manager ne bola ab tera number" → Lambda chala do (Din 6)
+- **Step Functions** — "manager ne bola ab tera number" → Lambda chala do (Din 7)
 
 ---
 

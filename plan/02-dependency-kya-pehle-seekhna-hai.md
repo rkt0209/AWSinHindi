@@ -70,7 +70,7 @@ Ye teeno **S3 pe depend** karte hain (data wahin se aata-jaata hai). Inko **kisi
 
 ### 🤖 Alag Track — Spec & Steering Files
 - **Kab seekho:** Kabhi bhi! Ye **AWS data-stack pe depend nahi karta.** Ye AI se code likhwane ka tareeka hai.
-- **Suggestion:** Beech me 1 din ya thoda-thoda roz, dimaag fresh karne ke liye. (Plan me Day 8 rakha hai.)
+- **Suggestion:** Beech me 1 din ya thoda-thoda roz, dimaag fresh karne ke liye. (Plan me **Day 5** rakha hai — Glue ke baad, EMR se pehle, ek halka fresh din.)
 
 ---
 
