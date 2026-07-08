@@ -89,6 +89,8 @@ amount   : bigint   (number)
 ```
 - Saath me **Location** (S3 path), **Classification** (`csv`), row count etc.
 
+> 🔑 **Ye "Location" bahut zaroori hai!** Ye asli data ka **S3 pata** hai (jaise `s3://.../raw-data/`). Table me **data nahi hota — sirf schema + ye pata** hota hai. Aage jab ETL job (File 4) is table ko "source" banayega, to wo **isi Location se ja ke asli data S3 se uthayega**. (Catalog = pata batane wala index card; asli data hamesha S3 me.)
+
 > 🎉 **Ho gaya!** Crawler ne khud `sales.csv` padh ke schema bana diya — tumne ek column bhi haath se nahi likha. Yahi Crawler ka jaadu.
 
 ---

@@ -38,6 +38,13 @@ Glue Studio me hum yahi **3 box** jodenge.
 
 **🖥️ Screen pe:** canvas me ek **S3/Catalog source box** aa gaya. Uspe click karke right panel me uska schema (order_id, city, amount) dikhega.
 
+> ❓ **Bada Doubt: "Catalog source diya, par data toh S3 me hai — job ko data kaise milta hai?"**
+> **Jawab:** Catalog table me sirf schema nahi — **S3 ka pata (Location) bhi** save hota hai (crawler ne File 3 me daala tha, wahan "Location" dikhi thi). Job catalog table padhta hai → usme se **Location (`s3://.../raw-data/`)** nikaalta hai → phir **seedhe S3 pe ja ke asli data uthata** hai.
+> - **Data kabhi catalog me nahi hota — hamesha S3 me hi rehta hai.** Catalog sirf "pata batane wala index" hai.
+> - **📇 Example:** Library ka **catalog card** — card pe kitaab nahi hoti, par likha hota "ye kitaab Rack 4 pe hai." Tum card padho → rack pe ja ke asli kitaab utha lo. Job bhi waise: catalog card padha (schema + S3 path) → S3 "rack" se data uthaya.
+> - **Ek line:** Catalog = **pata (address)**, S3 = **asli ghar (data)**. Job address padhta hai, ghar jaata hai, data laata hai.
+> - **Isliye** "Catalog wala source" aur "S3 direct wala source" — dono me **data aata S3 se hi** hai; Catalog wale me bas Glue khud path dhoondh leta hai (aasaan).
+
 ---
 
 ## 🪜 Step 3 — TRANSFORM Box (Saaf/Badlo)
