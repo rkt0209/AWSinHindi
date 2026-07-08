@@ -37,6 +37,7 @@ Ye plan tumhe **10 din me** sab kuch sikha dega — bilkul zero se.
 | Din 3 | [`din-03-lambda-automatic-naukar/`](./din-03-lambda-automatic-naukar/README.md) | Lambda concept (har nayi term ka definition box) + function banana + test/logs + S3 trigger (file aate hi khud chale) + role/timeout/env |
 | Din 4 | [`din-04-glue-data-safai/`](./din-04-glue-data-safai/README.md) | Glue concept (ETL/Crawler/Catalog/DPU definition box) + 2-layer permission + crawler+catalog + visual ETL job (raw→clean) + run/verify + cleanup |
 | Din 5 | [`din-05-genai-spec-steering/`](./din-05-genai-spec-steering/README.md) | GenAI/Agentic dev concept (Spec/Steering definition box) + steering file (rules) + spec file (req/design/tasks) + AI se code likhwana + bina-vs-saath farak + cleanup (koi AWS bill nahi) |
+| Din 6 | [`din-06-emr-bada-data/`](./din-06-emr-bada-data/README.md) | EMR/big-data concept (Cluster/Node/Spark/MapReduce/Hadoop definition box) + Glue-vs-EMR + 2-role permissions + chhota cluster banana + Spark word-count job + 🚨 turant terminate + cleanup (sabse mehnga din) |
 
 ---
 
