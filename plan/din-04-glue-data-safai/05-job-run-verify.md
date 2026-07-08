@@ -34,6 +34,8 @@
 
 > 💡 **Note:** Spark data ko **tukdon (parts) me** likhta hai — isliye ek `part-000...` file ban sakti hai (ya kai, bade data me). Ye normal hai.
 
+> ⚠️ **Agar `.parquet` file aayi (CSV nahi):** ye galti nahi — bas Target node ka **format Parquet reh gaya** (default). Parquet Excel me nahi khulti. **Fix:** Job → Visual → **Target (S3)** node → **Data format** → **CSV** chuno → **Save** → dobara **Run**. Ab `.csv` aayegi. Purani `.parquet` file S3 se delete kar do. (File 4 me detail + Parquet-vs-CSV box.)
+
 > 🎉🎉 **Mubarak!** Tumne raw data ko Glue se saaf karke clean-data me daal diya — poora **ETL (Extract-Transform-Load)** khud chal ke ho gaya!
 
 ---
@@ -59,6 +61,7 @@ Yaad karo Din 3: logs = diary. Glue bhi **CloudWatch** me logs likhta hai.
 | **Failed — `iam:PassRole`** | User (Layer 1) permission (File 2). |
 | **clean-data khaali** | Job Target path galat, ya Transform ne saara data filter kar diya (jaise `amount>1000` galti se). |
 | **Output `part-0000` naam se** | Normal — Spark parts me likhta hai. |
+| **Output `.parquet` hai, CSV nahi** | Target node → **Data format = CSV** → Save → Run. Default Parquet hota hai. |
 | **Bahut der Running** | Spark start hone me 2-4 min normal. Bahut zyada = bada data / DPU kam. |
 | **Failed — schema/column error** | Source schema aur transform ke column-naam match karo (File 4). |
 

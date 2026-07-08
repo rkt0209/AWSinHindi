@@ -64,8 +64,15 @@ Source box selected rakh ke **"+"** → **Transforms** → koi ek simple transfo
 1. Transform box selected → **"+"** → **Targets** → **"Amazon S3"**.
 2. Right panel me:
    - **S3 Target Location**: **Browse** → apne bucket ka **`clean-data/`** folder (`s3://tumhara-bucket/clean-data/`).
-   - **Format**: **CSV** (ya Parquet — abhi CSV rakho, aasaan hai).
+   - **Data format**: ⚠️ **`CSV`** ZAROOR chuno! (Default aksar **Parquet** hota hai — usse `.parquet` file banti hai jo Excel me nahi khulti. Dropdown me `CSV` select karo.)
    - **Compression**: None (abhi).
+
+> ⚠️ **SABSE COMMON GALTI (dhyaan!):** ye **"Data format" dropdown** chhod dena. Default **Parquet** hai, isliye `clean-data/` me `.csv` ki jagah `.parquet` file aa jaati hai. **Solution:** dropdown me **CSV** chuno, phir Save + Run. (Parquet galat nahi — bas Excel me nahi khulti; abhi CSV aasaan hai.)
+
+> 📦 **Ye Kya Hai: Parquet vs CSV**
+> - **CSV** = simple text, comma se columns alag (`order_id,city,amount`). **Excel/Notepad me aaram se khulti**, insaan padh le.
+> - **Parquet** = **compressed, columnar** format — Spark/big-data ke liye fast+chhoti, par **Excel me seedhe nahi khulti** (special tool chahiye).
+> - **Example:** CSV = handwritten list (koi bhi padh le); Parquet = zip+coded list (machine fast padhe, insaan ko tool chahiye). Practice ke liye **CSV** best.
 
 **🖥️ Screen pe:** teen box ki chain ban gayi:
 ```
@@ -100,6 +107,7 @@ Source box selected rakh ke **"+"** → **Transforms** → koi ek simple transfo
 | **Save pe `iam:PassRole` denied** | User ko IAMFullAccess/PassRole; job me `glue-mera-role` chuna? |
 | **Schema galat aa raha** | Source me "CSV" + header sahi set karo; ya Catalog wala source use karo. |
 | **Job details me role blank** | `glue-mera-role` list me na ho to File 2 se role banao. |
+| **Output `.parquet` aa raha, CSV nahi** | Target (S3) node → **Data format** dropdown → **CSV** chuno → Save → Run. Default Parquet hota hai. |
 
 ---
 

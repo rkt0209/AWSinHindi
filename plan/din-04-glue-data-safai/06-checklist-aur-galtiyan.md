@@ -54,6 +54,8 @@
 | **Glue Studio** | Drag-drop job editor | Video-edit app |
 | **Transform node** | Beech me data badalne wala step | Sabzi kaatna |
 | **DPU** | Power/mehnat ka naap (paisa) | Kitne cook × time |
+| **CSV** | Simple text, comma-separated; Excel me khulti | Handwritten list |
+| **Parquet** | Compressed columnar (Spark fast), Excel me nahi | Zip+coded list |
 | **iam:PassRole** | Service ko role dena/saunpna | Cook ko chaabi thamana |
 | **Glue Service Role** | Glue jo wardi pehen ke S3 chhoota | Cook ki kitchen-chaabi |
 
@@ -69,6 +71,7 @@
 | **0 tables created** | S3 path galat / `raw-data/` me `sales.csv` nahi. |
 | **clean-data khaali** | Target path galat, ya transform ne sab filter kar diya. |
 | **Output `part-0000` naam** | Normal — Spark parts me likhta hai. |
+| **Output `.parquet`, CSV nahi** | Target (S3) node → **Data format = CSV** → Save → Run (default Parquet hota hai). |
 | **Job bahut der / Failed schema** | Chhoti file; source-transform ke column match karo. |
 | **Logs Access Denied** | User ko `CloudWatchLogsFullAccess` (Din 3). |
 | **Sab Mumbai me?** | Glue + S3 same region (ap-south-1). |
